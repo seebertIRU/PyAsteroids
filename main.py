@@ -13,14 +13,19 @@ def main():
 	screen.fill(pygame.Color(0, 0, 0)) # black
 	playerx=constants.SCREEN_WIDTH // 2
 	playery=constants.SCREEN_HEIGHT // 2	
+	updateable=pygame.sprite.Group()
+	drawable=pygame.sprite.Group()
 	plr=player.Player(playerx, playery)
-	print(plr.rotation)
+	updateable.add(plr)
+	drawable.add(plr)
 	pygame.display.flip()
 	clk=pygame.time.Clock()
 	dt=0
 	while True:
-		plr.draw(screen)
-		plr.update(dt)
+		updateable.update(dt)
+		screen.fill(pygame.Color(0, 0, 0)) # black
+		for drawableitem in drawable:
+			drawableitem.draw(screen)
 		pygame.display.flip()
 		for event in pygame.event.get():
 			if event.type==pygame.QUIT:
