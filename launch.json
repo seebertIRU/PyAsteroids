@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: UV Run Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "python": "uv", // <--- Use uv as the interpreter
+            "args": ["run", "${file}"], // <--- Pass 'run' and the file as arguments
+            "env": {
+                // Optional: If uv run needs specific environment variables, add them here
+                // "MY_ENV_VAR": "some_value"
+            }
+        }
+    ]
+}

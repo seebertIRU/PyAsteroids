@@ -34,10 +34,10 @@ def main():
 	while True:
 		dt+=clk.tick(constants.FPS) / 1000	
 		updateable.update(dt)
-		for asteroid in asteroids:
-			if asteroid.collide(plr):
-				print("Game over!")
-				sys.exit()
+	#	for asteroid in asteroids:
+	#		if asteroid.collide(plr):
+	#			print("Game over!")
+				#sys.exit()
 		screen.fill(pygame.Color(0, 0, 0)) # black
 		for drawableitem in drawable:
 			drawableitem.draw(screen)
