@@ -3,4 +3,11 @@ name="PyAsteroids"
 version="0.1.0"
 dependencies = [
     "pygame>=2.0.0",
+    "pygame>=2.5.0",
+]
+requires-python = ">=3.9,<3.13" # Adjust according to your project's compatibility
+
+[tool.uv.workspace]
+members = [
+    "PyAsteroids",
 ]
